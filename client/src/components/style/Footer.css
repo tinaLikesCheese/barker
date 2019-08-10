@@ -1,0 +1,19 @@
+.footer{
+  padding-top: 500px; 
+  position: fixed;
+  left: 10px;
+  bottom: 0;
+  font-weight: bold;
+  width: auto;
+  text-align: center; 
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.footerLink{
+  padding-left: 20px; 
+}
+
+.footerLink:hover{
+  color: gray; 
+  cursor: pointer;
+}

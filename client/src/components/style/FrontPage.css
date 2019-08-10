@@ -1,0 +1,33 @@
+.mainImg {
+  /* border-radius: 25px 25px; */
+  width: 500px;
+  height: 500px;  
+  user-select: none;
+  margin-top: 50px;
+  margin-left: -2.5em; 
+}
+
+.btn{
+  margin-top: 20px; 
+  text-align: center; 
+}
+
+.signUp{
+  font-size: 30px;
+  font-weight:bold; 
+  background-color: rgba(251, 148, 62, 0.75);
+  color: black; 
+  border:none; 
+  border-radius: 10px;
+  text-decoration: none;
+  margin-right: 10px;
+  font-family: 'Roboto Condensed', sans-serif;
+  padding: 10px;
+  outline: none;
+}
+
+.signUp:hover{
+  cursor: pointer; 
+  background-color: rgba(175, 168, 172, 0.75); 
+  color: rgba(251, 148, 62, 0.75);
+}
