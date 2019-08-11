@@ -9,7 +9,15 @@ const NavBar = (props) => {
           <span className ={styles.tagline}>playmates for your pup mate</span>
         </h1>
       </header>
-      <h1 className={styles.searchIcon}><i className="fas fa-bars" onClick={()=>props.menuClicked()}></i></h1>
+      <span className={styles.links}>
+        <span onClick={()=>{props.handleHomeClick()}}> home </span>
+        <span> sign up </span>
+        <span onClick={()=>props.handleFriendFormClick()}> find pup friend </span>
+        <span> <i className="fas fa-paw"></i> about barker </span>
+      </span>
+      <h1 className={styles.burgerIcon}>
+        <i className="fas fa-bars" onClick={()=>props.menuClicked()}></i>
+      </h1>
     </div>
   )
 }

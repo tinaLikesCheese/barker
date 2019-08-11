@@ -11,5 +11,4 @@ const SideNav = (props) => {
     </div>
   )
 }
-
 export default SideNav;

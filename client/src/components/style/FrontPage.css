@@ -1,27 +1,29 @@
 .img {
-  background-color: rgba(255, 255, 255, 0.1);
+  /* background-color: rgba(255, 255, 255, 0.1); */
+  margin-top: 65px; 
   padding-top: 10px; 
   padding-bottom: 50px; 
+  z-index:1;
 }
 
 
 .mainImg {
-  /* border-radius: 25px 25px; */
-  width: 500px;
-  height: 500px;  
-  user-select: none;
+  border-radius: 25px 25px; 
   display: block;
   margin-top: 40px; 
-  margin-left: auto;
   margin-right: auto; 
+  margin-left: auto;
+  user-select: none;
+  z-index:1;
+  width: 400px;
+  height: 400px; 
 }
 
-.btn{
-  margin-top: 20px; 
+.btn {
   text-align: center; 
 }
 
-.signUp{
+.signUp {
   font-size: 30px;
   font-weight:bold; 
   background-color: rgba(251, 148, 62, 0.75);
@@ -30,13 +32,51 @@
   border-radius: 10px;
   text-decoration: none;
   margin-right: 10px;
+  margin-bottom: 50px; 
   font-family: 'Roboto Condensed', sans-serif;
   padding: 10px;
   outline: none;
 }
 
-.signUp:hover{
+.signUp:hover {
   cursor: pointer; 
   background-color: rgba(175, 168, 172, 0.9); 
-  color: rgba(251, 148, 62, 0.75);
+  color: whitesmoke;
+}
+
+
+@media screen and ( max-width: 320px ) {
+  .mainImg { 
+    width: 170px; 
+    height: 170px; 
+    object-fit: cover; 
+  }
+}
+
+@media screen and ( max-width: 700px ) {
+  .mainImg { 
+    width: 200px; 
+    height: 200px; 
+    object-fit: cover; 
+  }
+
+  .signUp {
+    font-size: 20px;
+  }
+}
+
+@media screen and ( min-width: 700px ) {
+  .mainImg { 
+    width: 300px; 
+    height: 300px; 
+    object-fit: cover; 
+  }
+}
+
+@media screen and ( min-width: 1024px) {
+  .mainImg { 
+    width: 450px; 
+    height: 450px; 
+    object-fit: cover;
+  }
 }
