@@ -6,10 +6,10 @@ const NavBar = (props) => {
     <div className={styles.navBar}>
       <header className={styles.title}>
         <h1>barker <i className="fas fa-paw"></i>
-          <span className ={styles.tagline}>find friends for your dog</span>
+          <span className ={styles.tagline}>playmates for your pup mate</span>
         </h1>
       </header>
-      <h1 className={styles.searchIcon}><i className="fas fa-bars"></i></h1>
+      <h1 className={styles.searchIcon}><i className="fas fa-bars" onClick={()=>props.menuClicked()}></i></h1>
     </div>
   )
 }

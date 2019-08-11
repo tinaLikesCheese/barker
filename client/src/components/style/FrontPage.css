@@ -1,10 +1,19 @@
+.img {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding-top: 10px; 
+  padding-bottom: 50px; 
+}
+
+
 .mainImg {
   /* border-radius: 25px 25px; */
   width: 500px;
   height: 500px;  
   user-select: none;
-  margin-top: 50px;
-  margin-left: -2.5em; 
+  display: block;
+  margin-top: 40px; 
+  margin-left: auto;
+  margin-right: auto; 
 }
 
 .btn{
@@ -28,6 +37,6 @@
 
 .signUp:hover{
   cursor: pointer; 
-  background-color: rgba(175, 168, 172, 0.75); 
+  background-color: rgba(175, 168, 172, 0.9); 
   color: rgba(251, 148, 62, 0.75);
 }
