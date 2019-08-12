@@ -6,7 +6,7 @@ const NavBar = (props) => {
     <div className={styles.navBar}>
       <header className={styles.title}>
         <h1>barker <i className="fas fa-paw"></i>
-          <span className ={styles.tagline}>playmates for your pup mate</span>
+          <span className ={styles.tagline}>playmates for your pupmate</span>
         </h1>
       </header>
       <span className={styles.links}>

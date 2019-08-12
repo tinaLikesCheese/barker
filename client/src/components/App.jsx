@@ -26,7 +26,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    // this.intervalScrolling(); 
+    this.intervalScrolling(); 
   }
 
   onFriendFormClick() {
@@ -85,6 +85,7 @@ class App extends React.Component {
       {this.state.open && <SideNav
         handleFriendFormClick={this.onFriendFormClick}
         handleHomeClick={this.onHomeClick}
+        body={this.state.body}
       />}
       {this.state.body === 'front' && <FrontPage
         handleFriendFormClick={this.onFriendFormClick}

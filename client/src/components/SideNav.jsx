@@ -3,7 +3,7 @@ import styles from './style/SideNav.css'
 
 const SideNav = (props) => {
   return(
-    <div className={styles.sideNav}>
+    <div className={props.body === 'front' ? styles.sideNav : styles.sideNav2}>
       <p onClick={()=>{props.handleHomeClick()}}>home</p>
       <p>sign up</p>
       <p onClick={()=>props.handleFriendFormClick()}>find pup friend</p>
