@@ -5,18 +5,28 @@ import FrontPage from './FrontPage.jsx';
 import Footer from './Footer.jsx';
 import Search from './Search.jsx';
 import SideNav from './SideNav.jsx';
+import ProfileList from './ProfileList.jsx'
+import imgArr from './sampleData.js';
 
 class App extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-      body: 'front',
+      body: 'profile',
       open: '',
-    }
+      image: 'https://munch-gallery.s3-us-west-1.amazonaws.com/dog.jpg',
+      images: imgArr,
+      idx: 0
+    };
 
     this.onFriendFormClick = this.onFriendFormClick.bind(this); 
     this.onHomeClick = this.onHomeClick.bind(this); 
     this.onMenuClick = this.onMenuClick.bind(this);
+    this.intervalScrolling = this.intervalScrolling.bind(this);
+  }
+
+  componentDidMount() {
+    // this.intervalScrolling(); 
   }
 
   onFriendFormClick() {
@@ -45,7 +55,24 @@ class App extends React.Component {
       open: !this.state.open
     });
   }
-}
+ }
+
+  intervalScrolling() {
+    setInterval(() => { 
+     let n; 
+     if(this.state.idx + 1 === this.state.images.length) {
+       n = 0; 
+     } else {
+       n = this.state.idx;
+     }
+     if(n < this.state.images.length) {
+      this.setState({ 
+        image: this.state.images[n], 
+        idx: n + 1,
+        });
+      } 
+    }, 
+    5000)}; 
   
   render() {
     return (
@@ -61,8 +88,14 @@ class App extends React.Component {
       />}
       {this.state.body === 'front' && <FrontPage
         handleFriendFormClick={this.onFriendFormClick}
+        image={this.state.image}
       />}
-      {this.state.body === 'search form' && <Search/>}
+      {this.state.body === 'search form' && <Search
+      handleHomeClick={this.onHomeClick}
+      />}
+      {this.state.body === 'profile' && <ProfileList
+      handleHomeClick={this.onHomeClick}
+      />}
       <Footer
        handleFriendFormClick={this.onFriendFormClick}
        handleHomeClick={this.onHomeClick}

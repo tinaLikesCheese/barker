@@ -47,6 +47,7 @@ class Search extends React.Component {
   render(){
     return(
       <div className={styles.searchForm}>
+        <span className={styles.closeIcon}><i onClick={this.props.handleHomeClick} className="fas fa-times"></i></span>
         <h2 className={styles.formTitle}> Tell us a little bit about your pup! </h2>
         <form onSubmit={this.handleSubmit}>
           <h3 className={styles.question}>My dog likes to ...</h3>

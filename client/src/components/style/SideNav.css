@@ -1,7 +1,6 @@
 .sideNav {
   position: fixed;
   right: 0; 
-  /* float: right;  */
   text-align: right; 
   background-color: rgba(245, 245, 245, 0.75);
   margin-right: 1em;
@@ -31,6 +30,7 @@
     color: rgba(251, 148, 62, 1);
     background-color: rgba(245, 245, 245, 0.9);
     text-align: center; 
+    /* margin-top: -21px; */
   }
 }
 
