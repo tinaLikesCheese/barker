@@ -1,8 +1,10 @@
 .profileEntry, .profileEntryMobile {
-  background-color: rgba(245, 245, 245, .5);
-  padding-top: 20px;
-  padding-bottom: 20px; 
+  background-color: rgba(245, 245, 245, .7);
+  padding: 20px;
+  margin-bottom: 30px; 
+  color: darkslategray;
 }
+
 
 .profileEntry {
   display: grid; 
@@ -12,7 +14,6 @@
 .profileEntryMobile {
   text-align: center; 
 }
-
 
 .img {
   width: 250px;
@@ -25,10 +26,16 @@
 
 .words {
   grid-column: 2/span 1; 
-  font-size: 15px; 
-  margin-left: -10px; 
-  padding-top: 20px; 
+  font-size: 16px; 
+  margin-left: -15px; 
   font-family: 'Roboto Condensed', sans-serif;
+  line-height: 20px; 
+}
+
+.cat {
+  color: black;
+  font-weight: bolder; 
+  font-size: 18px; 
 }
 
 @media screen and ( max-width: 950px ) {
@@ -49,6 +56,11 @@
 
   .words {
     padding-top: 5px;
+    font-size: 15px;
+  }
+
+  .cat {
+    font-size: 17px;
   }
 }
 

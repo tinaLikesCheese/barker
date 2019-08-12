@@ -6,16 +6,18 @@ import Footer from './Footer.jsx';
 import Search from './Search.jsx';
 import SideNav from './SideNav.jsx';
 import ProfileList from './ProfileList.jsx'
-import imgArr from './sampleData.js';
+import sampleData from './sampleData.js';
+
 
 class App extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-      body: 'profile',
+      body: 'front',
       open: '',
       image: 'https://munch-gallery.s3-us-west-1.amazonaws.com/dog.jpg',
-      images: imgArr,
+      images: '',
+      scroll: sampleData,
       idx: 0
     };
 
@@ -23,10 +25,11 @@ class App extends React.Component {
     this.onHomeClick = this.onHomeClick.bind(this); 
     this.onMenuClick = this.onMenuClick.bind(this);
     this.intervalScrolling = this.intervalScrolling.bind(this);
+    this.renderSearchProfiles = this.renderSearchProfiles.bind(this);
   }
 
   componentDidMount() {
-    this.intervalScrolling(); 
+    // this.intervalScrolling(); 
   }
 
   onFriendFormClick() {
@@ -60,19 +63,26 @@ class App extends React.Component {
   intervalScrolling() {
     setInterval(() => { 
      let n; 
-     if(this.state.idx + 1 === this.state.images.length) {
+     if(this.state.idx === this.state.scroll.length) {
        n = 0; 
      } else {
        n = this.state.idx;
      }
-     if(n < this.state.images.length) {
+     if(this.state.body === 'front' && n < this.state.scroll.length) {
       this.setState({ 
-        image: this.state.images[n], 
+        image: this.state.scroll[n].url, 
         idx: n + 1,
         });
       } 
     }, 
-    5000)}; 
+    3000)}; 
+
+  renderSearchProfiles(data) {
+    this.setState ({
+      images: data,
+      body: 'profile'
+    })
+  };
   
   render() {
     return (
@@ -93,9 +103,11 @@ class App extends React.Component {
       />}
       {this.state.body === 'search form' && <Search
       handleHomeClick={this.onHomeClick}
+      renderProfiles={this.renderSearchProfiles}
       />}
       {this.state.body === 'profile' && <ProfileList
       handleHomeClick={this.onHomeClick}
+      images={this.state.images}
       />}
       <Footer
        handleFriendFormClick={this.onFriendFormClick}

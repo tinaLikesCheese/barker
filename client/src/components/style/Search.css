@@ -45,6 +45,11 @@
   margin-top: 15px; 
 }
 
+.submit:hover {
+  cursor: pointer; 
+  color: whitesmoke;
+}
+
 .formTitle {
   color: black; 
   font-size: 25px;
