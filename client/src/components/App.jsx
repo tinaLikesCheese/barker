@@ -16,7 +16,7 @@ class App extends React.Component {
 
     this.onFriendFormClick = this.onFriendFormClick.bind(this); 
     this.onHomeClick = this.onHomeClick.bind(this); 
-    this.onOpenClick = this.onOpenClick.bind(this);
+    this.onMenuClick = this.onMenuClick.bind(this);
   }
 
   onFriendFormClick() {
@@ -39,12 +39,6 @@ class App extends React.Component {
     });
   }
 
-  onOpenClick() {
-    this.setState({
-        open: !this.state.open
-    });
- }
-
  onCloseClick() {
   if(this.state.open === true){
     this.setState({
@@ -57,7 +51,9 @@ class App extends React.Component {
     return (
     <div onClick={() => this.onCloseClick()}>
       <NavBar
-        menuClicked={this.onOpenClick}
+        menuClicked={this.onMenuClick}
+        handleHomeClick={this.onHomeClick}
+        handleFriendFormClick={this.onFriendFormClick}
         />
       {this.state.open && <SideNav
         handleFriendFormClick={this.onFriendFormClick}

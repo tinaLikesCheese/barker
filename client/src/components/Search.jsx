@@ -1,13 +1,27 @@
 import React from 'react';
 import styles from './style/Search.css'
+import { FastField } from 'formik';
 
 class Search extends React.Component {
   constructor(props){
     super(props)
     
     this.state = {
-      roughhousing: '',
+      roughhouse:'',
+      chase:'',
+      fetch:'',
+      toys:'',
+      xsmall:'',
+      small:'',
+      medium:'',
+      large:'',
+      xlarge:'',
+      value:'',
     }
+
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleInputChange(event) {
@@ -20,28 +34,40 @@ class Search extends React.Component {
     });
   }
 
+  handleChange(event) {
+    console.log(event.target)
+    this.setState({value: event.target.value});
+  }
+
+  handleSubmit(event) {
+    alert('Your favorite flavor is: ' + this.state.value);
+    event.preventDefault();
+  }
+
   render(){
     return(
       <div className={styles.searchForm}>
-        <form>
+        <h2 className={styles.formTitle}> Tell us a little bit about your pup! </h2>
+        <form onSubmit={this.handleSubmit}>
+          <h3 className={styles.question}>My dog likes to ...</h3>
           <label>
-            Wrestling/Roughhousing
+            wrestle/roughhouse
             <input
-              name="roughhousing"
+              name="roughhouse"
               type="checkbox"
-              checked={this.state.roughhousing}
+              checked={this.state.roughhouse}
               onChange={this.handleInputChange} />
           </label><br/>
           <label>
-            Chasing Dogs
+            chase and be chased by other dogs
             <input
-              name="chasing"
+              name="chase"
               type="checkbox"
-              checked={this.state.chasing}
+              checked={this.state.chase}
               onChange={this.handleInputChange} />
           </label><br/>
           <label>
-            Fetch
+            play fetch and chase afer toys/balls
             <input
               name="fetch"
               type="checkbox"
@@ -49,38 +75,68 @@ class Search extends React.Component {
               onChange={this.handleInputChange} />
           </label><br/>
           <label>
-            Playing with Toys/Tug of War
+            play with toys/play tug of war
             <input
-              name="Toys"
+              name="toys"
               type="checkbox"
               checked={this.state.toys}
               onChange={this.handleInputChange} />
           </label><br/>
-          <h3>Size</h3>
-            <label>
-              X-Small (2 - 7 lbs)
-              <input
-                name="xsmall"
-                type="checkbox"
-                checked={this.state.xsmall}
-                onChange={this.handleInputChange} />
-            </label><br/>
-            <label>
-              Small (8 - 22 lbs)
-              <input
-                name="small"
-                type="checkbox"
-                checked={this.state.small}
-                onChange={this.handleInputChange} />
-            </label><br/>
-            <label>
-            Medium
+          <h3 className={styles.question}>My dog prefers dogs that are...</h3>
+          <label>
+            X-Small (2 - 9 lbs)
+            <input
+              name="xsmall"
+              type="checkbox"
+              checked={this.state.xsmall}
+              onChange={this.handleInputChange} />
+          </label><br/>
+          <label>
+            Small (10 - 27 lbs)
+            <input
+              name="small"
+              type="checkbox"
+              checked={this.state.small}
+              onChange={this.handleInputChange} />
+          </label><br/>
+          <label>
+            Medium (28 - 59 lbs)
             <input
               name="medium"
               type="checkbox"
-              checked={this.state.roughhousing}
+              checked={this.state.medium}
               onChange={this.handleInputChange} />
           </label><br/>
+          <label>
+            Large (60 - 99 lbs)
+            <input
+              name="Large"
+              type="checkbox"
+              checked={this.state.large}
+              onChange={this.handleInputChange} />
+          </label><br/>
+          <label>
+            XL (99+ lbs)
+            <input
+              name="XL"
+              type="checkbox"
+              checked={this.state.xlarge}
+              onChange={this.handleInputChange} />
+          </label><br/>
+          <label>
+          <h3 className={styles.question}>Puppies (dogs under 1 year) okay?</h3>
+          <select className={styles.select} value={this.state.value} onChange={this.handleChange}>
+            <option value="yes">Yes, absolutely! My dog is a puppy/puppy at heart!</option>
+            <option value="no">Puppies are cute, but that's going to be a no from my dog...</option>
+            <option value="none">My dog is okay with some puppies.</option>
+          </select>
+          <select className={styles.selectMobile} value={this.state.value} onChange={this.handleChange}>
+            <option value="yes">Yes, absolutely!</option>
+            <option value="no">No thank you...</option>
+            <option value="none">No preference.</option>
+          </select>
+          </label><br/>
+          <input className={styles.submit} type="submit" value="Submit" />
         </form>
       </div>
     )
