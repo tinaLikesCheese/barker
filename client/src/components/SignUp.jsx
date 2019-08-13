@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './style/SignUp.css';
+import axios from 'axios';
 
 class SignUp extends React.Component {
   constructor(props){
@@ -33,18 +34,34 @@ class SignUp extends React.Component {
   }
 
   handleChange(event) {
-    console.log(event.target)
     this.setState({[event.target.name]: event.target.value});
   }
 
   handleSubmit(event) {
-    event.preventDefault();
     if(this.state.size === 'pick' ){
+      event.preventDefault();
       alert('Please select a size for your dog')
     } else {
-      console.log(this.state);
+      let likes = [];
+      for (let key in this.state) {
+        if(this.state[key] === true) {
+          likes.push(key);
+        }
+      }
+      axios.post('/dog', {
+        dogName: this.state.dogName,
+        age: this.state.age,
+        size: this.state.size,
+        url: this.state.url,
+        likes: likes,
+        about: this.state.about,
+      })
+      .then(()=> console.log('success'))
+      .catch(err=> console.log(err))
     }
   }
+
+ 
 
   render(){
     return(

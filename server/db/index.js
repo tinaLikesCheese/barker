@@ -8,7 +8,7 @@ db.once('open', function() {
 });
 
 var dogSchema = new mongoose.Schema({
-    name: { 
+    dogName: { 
       type: String, unique: true 
     },
     age: Number, 
@@ -25,7 +25,7 @@ var Dog = mongoose.model('Dog', dogSchema)
 
 const save = (dog, callback) => {
   let doggo = new Dog ({
-    name: dog.name,
+    dogName: dog.dogName,
     age: dog.age,
     size: dog.size,
     url: dog.url, 
@@ -44,7 +44,7 @@ const save = (dog, callback) => {
 
 let Billy =
 {
-  name: 'Billy',
+  dogName: 'Billy',
   age: 5, 
   size: 'Medium',
   url: 'https://munch-gallery.s3-us-west-1.amazonaws.com/Billy.jpg',
@@ -53,7 +53,6 @@ let Billy =
 }
 
 save(Billy, (err, data) => console.log(data));
-
 
 
 

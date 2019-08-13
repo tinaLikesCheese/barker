@@ -20,11 +20,7 @@ const sampleData = [
     age: 5, 
     size: 'Medium',
     url: 'https://munch-gallery.s3-us-west-1.amazonaws.com/Billy.jpg',
-    likes: {
-      fetch: true, 
-      toys: true,
-      roughhouse: true,
-    },
+    likes: ['fetch', 'toys', 'roughhouse'],
     about: 'Lorem ipsum dolor amet aesthetic ipsum velit commodo, cronut slow-carb fingerstache edison bulb ex kitsch qui sed. Austin esse ethical, thundercats reprehenderit laborum four dollar toast tattooed blue bottle velit gluten-free. Dolor succulents cornhole kombucha nisi cred chillwave church-key culpa. Hexagon minim narwhal sunt cray. Jianbing taiyaki laborum truffaut small batch et YOLO, williamsburg excepteur knausgaard sartorial tbh squid.'
   }, 
   {
@@ -32,10 +28,7 @@ const sampleData = [
     age: 3, 
     size: 'Medium',
     url: 'https://munch-gallery.s3-us-west-1.amazonaws.com/Christian.jpg',
-    likes: {
-      fetch: true, 
-      toys: true,
-    },
+    likes: ['fetch', 'toys'],
     about: 'Lorem ipsum dolor amet aesthetic ipsum velit commodo, cronut slow-carb fingerstache edison bulb ex kitsch qui sed. Austin esse ethical, thundercats reprehenderit laborum four dollar toast tattooed blue bottle velit gluten-free. Dolor succulents cornhole kombucha nisi cred chillwave church-key culpa. Hexagon minim narwhal sunt cray. Jianbing taiyaki laborum truffaut small batch et YOLO, williamsburg excepteur knausgaard sartorial tbh squid.'
   },
   {
@@ -43,10 +36,7 @@ const sampleData = [
     age: 8, 
     size: 'Small',
     url: 'https://munch-gallery.s3-us-west-1.amazonaws.com/Janice.jpg',
-    likes: {
-      chase: true, 
-      toys: true,
-    },
+    likes: ['chase', 'toys'],
     about: 'Lorem ipsum dolor amet aesthetic ipsum velit commodo, cronut slow-carb fingerstache edison bulb ex kitsch qui sed. Austin esse ethical, thundercats reprehenderit laborum four dollar toast tattooed blue bottle velit gluten-free. Dolor succulents cornhole kombucha nisi cred chillwave church-key culpa. Hexagon minim narwhal sunt cray. Jianbing taiyaki laborum truffaut small batch et YOLO, williamsburg excepteur knausgaard sartorial tbh squid.'
   },
   {
@@ -54,10 +44,7 @@ const sampleData = [
     age: 6, 
     size: 'Small',
     url: 'https://munch-gallery.s3-us-west-1.amazonaws.com/Joel.jpg',
-    likes: {
-      chase: true, 
-      roughhouse: true,
-    },
+    likes: ['chase', 'roughhouse'],
     about: 'Lorem ipsum dolor amet aesthetic ipsum velit commodo, cronut slow-carb fingerstache edison bulb ex kitsch qui sed. Austin esse ethical, thundercats reprehenderit laborum four dollar toast tattooed blue bottle velit gluten-free. Dolor succulents cornhole kombucha nisi cred chillwave church-key culpa. Hexagon minim narwhal sunt cray. Jianbing taiyaki laborum truffaut small batch et YOLO, williamsburg excepteur knausgaard sartorial tbh squid.'
   }, 
 ]
