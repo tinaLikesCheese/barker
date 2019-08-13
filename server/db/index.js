@@ -41,6 +41,16 @@ module.exports.save = (dog, callback) => {
   })
 };
 
+module.exports.findAll = (callback) => {
+  Dog.find((err, dogs) => {
+    if (err) {
+      callback(err);
+    } else {
+      callback(null, dogs);
+    }
+  })
+}
+
 
 // let Billy =
 // {

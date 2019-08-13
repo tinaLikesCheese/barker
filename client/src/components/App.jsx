@@ -8,6 +8,7 @@ import SideNav from './SideNav.jsx';
 import ProfileList from './ProfileList.jsx';
 import SignUp from './SignUp.jsx';
 import sampleData from './sampleData.js';
+import { thisExpression } from '@babel/types';
 
 
 class App extends React.Component {
@@ -31,7 +32,12 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    // this.intervalScrolling(); 
+    axios.get('/allDogs')
+      .then(({data}) => {this.setState({
+        scroll: data,
+      }, this.intervalScrolling)
+      })
+      .catch(err => console.log(err))
   }
 
   onFriendFormClick() {
