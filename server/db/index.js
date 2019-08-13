@@ -23,7 +23,7 @@ var dogSchema = new mongoose.Schema({
 var Dog = mongoose.model('Dog', dogSchema)
 
 
-const save = (dog, callback) => {
+module.exports.save = (dog, callback) => {
   let doggo = new Dog ({
     dogName: dog.dogName,
     age: dog.age,
@@ -32,7 +32,7 @@ const save = (dog, callback) => {
     likes: dog.likes,
     about: dog.about,
   })
-  doggo.save(function (err, dog) {
+  doggo.save(function (err) {
     if (err) {
       callback(err);
     } else {
@@ -42,17 +42,17 @@ const save = (dog, callback) => {
 };
 
 
-let Billy =
-{
-  dogName: 'Billy',
-  age: 5, 
-  size: 'Medium',
-  url: 'https://munch-gallery.s3-us-west-1.amazonaws.com/Billy.jpg',
-  likes: ['fetch', 'toys', 'roughhouse'],
-  about: 'Lorem ipsum dolor amet aesthetic ipsum velit commodo, cronut slow-carb fingerstache edison bulb ex kitsch qui sed. Austin esse ethical, thundercats reprehenderit laborum four dollar toast tattooed blue bottle velit gluten-free. Dolor succulents cornhole kombucha nisi cred chillwave church-key culpa. Hexagon minim narwhal sunt cray. Jianbing taiyaki laborum truffaut small batch et YOLO, williamsburg excepteur knausgaard sartorial tbh squid.'
-}
+// let Billy =
+// {
+//   dogName: 'Billy',
+//   age: 5, 
+//   size: 'Medium',
+//   url: 'https://munch-gallery.s3-us-west-1.amazonaws.com/Billy.jpg',
+//   likes: ['fetch', 'toys', 'roughhouse'],
+//   about: 'Lorem ipsum dolor amet aesthetic ipsum velit commodo, cronut slow-carb fingerstache edison bulb ex kitsch qui sed. Austin esse ethical, thundercats reprehenderit laborum four dollar toast tattooed blue bottle velit gluten-free. Dolor succulents cornhole kombucha nisi cred chillwave church-key culpa. Hexagon minim narwhal sunt cray. Jianbing taiyaki laborum truffaut small batch et YOLO, williamsburg excepteur knausgaard sartorial tbh squid.'
+// }
 
-save(Billy, (err, data) => console.log(data));
+// save(Billy, (err, data) => console.log(data));
 
 
 

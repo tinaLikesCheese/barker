@@ -4,7 +4,7 @@ import styles from './style/ProfileEntry.css'
 const ProfileEntry = (props) => {
   let likes = '';
   for (let like of props.image.likes) {
-    likes += ` ${key},`
+    likes += ` ${like},`
   }
 
   likes = likes.slice(0, likes.length - 1)
