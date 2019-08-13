@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import styles from './style/Search.css'
+import styles from './style/Search.css';
 import sampleData from './sampleData.js';
 
 
@@ -45,7 +45,6 @@ class Search extends React.Component {
     if(this.state.value === 'pick' ){
       alert('Please select if puppies are okay!')
     } else {
-      console.log(this.state);
       this.props.renderProfiles(sampleData);
     }
   }
@@ -131,19 +130,19 @@ class Search extends React.Component {
               onChange={this.handleInputChange} />
           </label><br/>
           <label>
-          <h3 className={styles.question}>Puppies (dogs under 1 year) okay?</h3>
-          <select className={styles.select} value={this.state.value} onChange={this.handleChange}>
-            <option value="pick">Please Choose One</option>
-            <option value="yes">Yes, absolutely! My dog is a puppy/puppy at heart!</option>
-            <option value="no">Puppies are cute, but that's going to be a no from my dog...</option>
-            <option value="none">My dog is okay with some puppies.</option>
-          </select>
-          <select className={styles.selectMobile} value={this.state.value} onChange={this.handleChange}>
-            <option value="pick">Please Choose One</option>
-            <option value="yes">Yes, absolutely!</option>
-            <option value="no">No thank you...</option>
-            <option value="none">No preference.</option>
-          </select>
+            <h3 className={styles.question}>Puppies (dogs under 1 year) okay?</h3>
+            <select className={styles.select} value={this.state.value} onChange={this.handleChange}>
+              <option value="pick">Please Choose One</option>
+              <option value="yes">Yes, absolutely! My dog is a puppy/puppy at heart!</option>
+              <option value="no">Puppies are cute, but that's going to be a no from my dog...</option>
+              <option value="none">My dog is okay with some puppies.</option>
+            </select>
+            <select className={styles.selectMobile} value={this.state.value} onChange={this.handleChange}>
+              <option value="pick">Please Choose One</option>
+              <option value="yes">Yes, absolutely!</option>
+              <option value="no">No thank you...</option>
+              <option value="none">No preference.</option>
+            </select>
           </label><br/>
           <input className={styles.submit} type="submit" value="Submit" />
         </form>

@@ -5,7 +5,8 @@ import FrontPage from './FrontPage.jsx';
 import Footer from './Footer.jsx';
 import Search from './Search.jsx';
 import SideNav from './SideNav.jsx';
-import ProfileList from './ProfileList.jsx'
+import ProfileList from './ProfileList.jsx';
+import SignUp from './SignUp.jsx';
 import sampleData from './sampleData.js';
 
 
@@ -26,6 +27,7 @@ class App extends React.Component {
     this.onMenuClick = this.onMenuClick.bind(this);
     this.intervalScrolling = this.intervalScrolling.bind(this);
     this.renderSearchProfiles = this.renderSearchProfiles.bind(this);
+    this.onSignUpClick = this.onSignUpClick.bind(this);
   }
 
   componentDidMount() {
@@ -60,6 +62,13 @@ class App extends React.Component {
   }
  }
 
+ onSignUpClick() {
+  this.setState({
+    body: 'sign up',
+    open: false,
+  })
+ }
+
   intervalScrolling() {
     setInterval(() => { 
      let n; 
@@ -91,27 +100,37 @@ class App extends React.Component {
         menuClicked={this.onMenuClick}
         handleHomeClick={this.onHomeClick}
         handleFriendFormClick={this.onFriendFormClick}
+        handleSignUp={this.onSignUpClick}
         />
+
       {this.state.open && <SideNav
         handleFriendFormClick={this.onFriendFormClick}
         handleHomeClick={this.onHomeClick}
+        handleSignUp={this.onSignUpClick}
         body={this.state.body}
       />}
+
       {this.state.body === 'front' && <FrontPage
         handleFriendFormClick={this.onFriendFormClick}
         image={this.state.image}
       />}
+
       {this.state.body === 'search form' && <Search
-      handleHomeClick={this.onHomeClick}
-      renderProfiles={this.renderSearchProfiles}
+        handleHomeClick={this.onHomeClick}
+        renderProfiles={this.renderSearchProfiles}
+      />}
+
+      {this.state.body === 'sign up' && <SignUp
+        handleHomeClick={this.onHomeClick}
       />}
       {this.state.body === 'profile' && <ProfileList
-      handleHomeClick={this.onHomeClick}
-      images={this.state.images}
+        handleHomeClick={this.onHomeClick}
+        images={this.state.images}
       />}
       <Footer
        handleFriendFormClick={this.onFriendFormClick}
        handleHomeClick={this.onHomeClick}
+       handleSignUp={this.onSignUpClick}
       />
     </div>
     );

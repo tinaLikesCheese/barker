@@ -6,7 +6,7 @@ const Footer = (props) => {
     <div className={styles.footer}>
       <h3>
         <span className={`${styles.footerLink} ${styles.home}`} onClick={() => props.handleHomeClick()}>home</span> 
-        <span className={`${styles.footerLink} ${styles.signUp}`}>sign up</span>
+        <span className={`${styles.footerLink} ${styles.signUp}`} onClick={()=>props.handleSignUp()}>sign up</span>
         <span className={`${styles.footerLink} ${styles.friend}`} onClick={(e)=>props.handleFriendFormClick()}>find a friend</span>
         <span className={`${styles.footerLink} ${styles.about}`}>about us</span>  
       </h3>

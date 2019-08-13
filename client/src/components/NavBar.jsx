@@ -10,8 +10,8 @@ const NavBar = (props) => {
         </h1>
       </header>
       <span className={styles.links}>
-        <span onClick={()=>{props.handleHomeClick()}}> home </span>
-        <span> sign up </span>
+        <span onClick={()=>props.handleHomeClick()}> home </span>
+        <span onClick={()=>props.handleSignUp()}> sign up </span>
         <span onClick={()=>props.handleFriendFormClick()}> find pup friend </span>
         <span> <i className="fas fa-paw"></i> about barker </span>
       </span>
