@@ -6,7 +6,7 @@ const ProfileList = (props) => {
   return (
     <div className={styles.profileList}>
       <h1 className={styles.title}>Furever Pals <i className="fas fa-paw"></i></h1>
-      {props.images.map(image => <ProfileEntry image={image}/>)}
+      {props.images.map((image, i) => <ProfileEntry image={image} key={i}/>)}
     </div>
   )
 }

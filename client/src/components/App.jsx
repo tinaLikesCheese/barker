@@ -15,11 +15,11 @@ class App extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-      body: 'front',
+      body: 'search form',
       open: '',
       image: 'https://munch-gallery.s3-us-west-1.amazonaws.com/dog.jpg',
       images: '',
-      scroll: sampleData,
+      scroll: '',
       idx: 0
     };
 
@@ -32,12 +32,12 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('/allDogs')
-      .then(({data}) => {this.setState({
-        scroll: data,
-      }, this.intervalScrolling)
-      })
-      .catch(err => console.log(err))
+    // axios.get('/allDogs')
+    //   .then(({data}) => {this.setState({
+    //     scroll: data,
+    //   }, this.intervalScrolling)
+    //   })
+    //   .catch(err => console.log(err))
   }
 
   onFriendFormClick() {

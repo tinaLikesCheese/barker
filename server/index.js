@@ -30,5 +30,15 @@ app.post('/dog', (req, res) => {
   });
 })
 
+app.get('/search', (req, res) => {
+  db.filter(req.query, (err, dogs) => {
+    if(err) {
+      res.status(500).send(err);
+    } else {
+      res.send(dogs)
+    }
+  })
+})
+
 
 app.listen(PORT, ()=> console.log(`Server listening on port ${PORT}`))

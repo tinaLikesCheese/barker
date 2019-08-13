@@ -37,17 +37,27 @@ class Search extends React.Component {
   }
 
   handleChange(event) {
-    console.log(event.target)
     this.setState({value: event.target.value});
   }
 
   handleSubmit(event) {
+    event.preventDefault(); 
     if(this.state.value === 'pick' ){
       alert('Please select if puppies are okay!')
     } else {
-      this.props.renderProfiles(sampleData);
-    }
+      let parameters = {}
+      for (let key in this.state) {
+        if(this.state[key] === true) {
+          parameters[key] = true;
+        }
+      }
+      axios.get('/search', { params: parameters })
+        .then(({data}) => this.props.renderProfiles(data))
+        .catch(err => console.log(err)); 
   }
+}
+
+// this.props.renderProfiles(sampleData);
 
   render(){
     return(

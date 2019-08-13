@@ -7,7 +7,6 @@ const FrontPage = (props) => {
       <div className={styles.img}>
         <img 
           className={styles.mainImg} 
-          // style={{objectFit: 'cover'}} 
           src={props.image}/>
       </div>
       <div className={styles.btn}>

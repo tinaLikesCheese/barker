@@ -32,7 +32,7 @@ module.exports.save = (dog, callback) => {
     likes: dog.likes,
     about: dog.about,
   })
-  doggo.save(function (err) {
+  doggo.save((err) => {
     if (err) {
       callback(err);
     } else {
@@ -49,6 +49,18 @@ module.exports.findAll = (callback) => {
       callback(null, dogs);
     }
   })
+}
+
+module.exports.filter = (params, callback) => {
+  console.log(params)
+  exports.findAll((err, dogs) => {
+    if (err) {
+      callback (err);
+    } else {
+      let result = dogs.filter(dog => params.hasOwnProperty(dog.size))
+      callback (null, result);
+    }
+  })  
 }
 
 
