@@ -47,6 +47,11 @@
   font-size: 18px; 
 }
 
+.friend:hover {
+  cursor: pointer;
+  color: rgba(251, 148, 62, 0.75); 
+}
+
 @media screen and ( max-width: 950px ) {
   .profileEntry { 
     display: none; 

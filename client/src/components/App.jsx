@@ -8,14 +8,14 @@ import SideNav from './SideNav.jsx';
 import ProfileList from './ProfileList.jsx';
 import SignUp from './SignUp.jsx';
 import sampleData from './sampleData.js';
-import { thisExpression } from '@babel/types';
+
 
 
 class App extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-      body: 'search form',
+      body: 'front',
       open: '',
       image: 'https://munch-gallery.s3-us-west-1.amazonaws.com/dog.jpg',
       images: '',
@@ -129,6 +129,7 @@ class App extends React.Component {
       {this.state.body === 'sign up' && <SignUp
         handleHomeClick={this.onHomeClick}
       />}
+
       {this.state.body === 'profile' && <ProfileList
         handleHomeClick={this.onHomeClick}
         images={this.state.images}

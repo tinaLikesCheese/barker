@@ -52,12 +52,12 @@ module.exports.findAll = (callback) => {
 }
 
 module.exports.filter = (params, callback) => {
-  console.log(params)
   exports.findAll((err, dogs) => {
     if (err) {
       callback (err);
     } else {
-      let result = dogs.filter(dog => params.hasOwnProperty(dog.size))
+      let result = dogs.filter(dog => params.hasOwnProperty(dog.size) && 
+      (params.hasOwnProperty(dog.likes[0]) || params.hasOwnProperty(dog.likes[1])))
       callback (null, result);
     }
   })  
