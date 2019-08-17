@@ -45,15 +45,7 @@ class Search extends React.Component {
     if(this.state.value === 'pick' ){
       alert('Please select if puppies are okay!')
     } else {
-      let parameters = {}
-      for (let key in this.state) {
-        if(this.state[key] === true) {
-          parameters[key] = true;
-        }
-      }
-      axios.get('/search', { params: parameters })
-        .then(({data}) => this.props.renderProfiles(data))
-        .catch(err => console.log(err)); 
+     this.props.renderProfiles(sampleData)
   }
 }
 
